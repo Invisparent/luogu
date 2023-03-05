@@ -5,15 +5,14 @@ public class Main {
         int len = 2 * r + 1;
         int begI = i - r, begJ = j - r, endI = i + r, endJ = j + r;
 
-        if (d == 0) {
+        if (d == 0)
             for (int x = 0; x < len; ++x)
                 for (int y = 0; y < len; ++y)
                     newMatrix[begI + y][endJ - x] = matrix[begI + x][begJ + y];
-        } else {
+        else
             for (int x = 0; x < len; ++x)
                 for (int y = 0; y < len; ++y)
                     newMatrix[endI - y][begJ + x] = matrix[begI + x][begJ + y];
-        }
 
         for (int t = begI; t <= endI; ++t)
             System.arraycopy(newMatrix[t], begJ, matrix[t], begJ, len);
